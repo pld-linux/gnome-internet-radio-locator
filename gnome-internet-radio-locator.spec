@@ -1,13 +1,14 @@
 Summary:	GNOME Internet Radio Locator
 Summary(pl.UTF-8):	GNOME Internet Radio Locator - program do wyszukiwania rozgłośni internetowych
 Name:		gnome-internet-radio-locator
-Version:	0.6.1
+Version:	2.0.8
 Release:	1
 License:	GPL v3+ (parts LGPL v2.1+ or GPL v2+)
 Group:		X11/Applications/Sound
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-internet-radio-locator/0.6/%{name}-%{version}.tar.xz
-# Source0-md5:	6d311a0bdf48a9b301b183e4c842519d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-internet-radio-locator/2.0/%{name}-%{version}.tar.xz
+# Source0-md5:	21cecd570dcf61fcd9eb83c07b9384a8
 URL:		https://wiki.gnome.org/Apps/Girl
+BuildRequires:	geocode-glib-devel >= 3.20
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gstreamer-devel >= 1.0
@@ -24,6 +25,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	yelp-tools
+Requires:	geocode-glib >= 3.20
 Requires:	glib2 >= 1:2.38.0
 Requires:	libchamplain >= 0.12.10
 # only functionally, both packages can be installed simultaneously
@@ -46,6 +48,7 @@ wyszukać programy internetowych rozgłości radiowych nadających na
 %configure \
 	--disable-silent-rules \
 	--with-recording
+# --with-help is broken
 
 %{__make}
 
@@ -64,8 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BROADCAST ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/gnome-internet-radio-locator
-%{_datadir}/appdata/gnome-internet-radio-locator.appdata.xml
 %{_datadir}/gnome-internet-radio-locator
+%{_datadir}/metainfo/gnome-internet-radio-locator.appdata.xml
 %{_desktopdir}/gnome-internet-radio-locator.desktop
 %{_iconsdir}/hicolor/*x*/apps/gnome-internet-radio-locator.png
 %{_mandir}/man1/gnome-internet-radio-locator.1*
