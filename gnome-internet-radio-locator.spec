@@ -1,12 +1,12 @@
 Summary:	GNOME Internet Radio Locator
 Summary(pl.UTF-8):	GNOME Internet Radio Locator - program do wyszukiwania rozgłośni internetowych
 Name:		gnome-internet-radio-locator
-Version:	2.6.0
+Version:	2.8.0
 Release:	1
 License:	GPL v3+ (parts LGPL v2.1+ or GPL v2+)
 Group:		X11/Applications/Sound
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-internet-radio-locator/2.6/%{name}-%{version}.tar.xz
-# Source0-md5:	1d85cfb3cbdc70a357e53914a85183f7
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-internet-radio-locator/2.8/%{name}-%{version}.tar.xz
+# Source0-md5:	e9892afe7723de6d240e31bbae2729d2
 URL:		https://wiki.gnome.org/Apps/Girl
 BuildRequires:	geocode-glib-devel >= 3.20
 BuildRequires:	gettext-tools
