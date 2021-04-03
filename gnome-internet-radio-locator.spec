@@ -1,12 +1,12 @@
 Summary:	GNOME Internet Radio Locator
 Summary(pl.UTF-8):	GNOME Internet Radio Locator - program do wyszukiwania rozgłośni internetowych
 Name:		gnome-internet-radio-locator
-Version:	3.9.2
+Version:	4.0.0
 Release:	1
 License:	GPL v3+ (parts LGPL v2.1+ or GPL v2+)
 Group:		X11/Applications/Sound
-Source0:	https://download.gnome.org/sources/gnome-internet-radio-locator/3.9/%{name}-%{version}.tar.xz
-# Source0-md5:	e78632552536f4ad4a6e20cf4b319a50
+Source0:	https://download.gnome.org/sources/gnome-internet-radio-locator/4.0/%{name}-%{version}.tar.xz
+# Source0-md5:	169f93d7103ef10f3639d4b53792d55e
 URL:		https://wiki.gnome.org/Apps/Girl
 BuildRequires:	geoclue2-devel >= 0.29.1
 BuildRequires:	geocode-glib-devel >= 3.20
@@ -16,8 +16,8 @@ BuildRequires:	gstreamer-devel >= 1.0
 # pkgconfig(gstreamer-player-1.0)
 BuildRequires:	gstreamer-plugins-bad-devel >= 1.0
 BuildRequires:	gstreamer-plugins-base-devel >= 1.0
-BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	gtk-doc >= 1.16
+BuildRequires:	gtk4-devel >= 4.0.3
 BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libchamplain-devel >= 0.12.10
 BuildRequires:	libxml2-devel >= 2.0
@@ -29,9 +29,10 @@ BuildRequires:	yelp-tools
 Requires:	geoclue2 >= 0.29.1
 Requires:	geocode-glib >= 3.20
 Requires:	glib2 >= 1:2.38.0
+Requires:	gtk4 >= 4.0.3
 Requires:	libchamplain >= 0.12.10
-# only functionally, both packages can be installed simultaneously
-#Obsoletes:	girl
+# only functionally (both packages can be installed simultaneously), but girl is unmaintained since 2017
+Obsoletes:	girl < 10.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
